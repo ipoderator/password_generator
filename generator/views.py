@@ -1,17 +1,18 @@
-import re
 from django.shortcuts import render
-from django.http import HttpResponse
 import random
 
 
+""" Функция вызова домашней страницы """
 def home(request):
-    return render(request, 'generator/home.html') 
-    
+    return render(request, 'generator/home.html') # Вызов html файла на домашней странице
 
+
+""" Описание проекта """
 def description(request):
     return render(request, 'generator/description.html')
 
 
+""" Основной код проекта """
 def password(request):
     characters = list('abcdefghijklmnopqrstwxyz')
 
@@ -21,7 +22,6 @@ def password(request):
         characters.extend(list('!@#$%^&*()_+'))
     if request.GET.get('numbers'):
         characters.extend(list('0123456789'))
-    
     length = int(request.GET.get('length', 12))
 
     thepassword = ''

@@ -18,7 +18,7 @@ from django.urls import path
 from generator import views
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('password/', views.password, name='password'),
-    path('description/', views.description, name='description')
+    path('', views.home, name='home'), # Адрес домашней страницы
+    path('password/', views.password, name='password'), 
+    path('description/', views.description, name='description'),
 ]
